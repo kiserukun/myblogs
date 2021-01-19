@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  ma
+  get 'blogs/index'
+  root to: "blogs#index"
 end
