@@ -85,6 +85,16 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  text-align: center;
+ 
+}
+.form__wrappers{
+  border: 1px solid #87CEFA;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 1.5em;
+  box-shadow:0 0 8px rgba(0,0,0, .4);
 }
 
 .form__text {
@@ -96,7 +106,7 @@ a {
 }
 
 .actions{
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .form__btn{

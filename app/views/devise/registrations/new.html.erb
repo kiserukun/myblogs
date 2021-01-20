@@ -1,9 +1,10 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
+    <div class="form__wrappers">
       <h2 class="page-heading">ユーザー新規登録</h2>
 
-        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+        <%= form_with model: @user, url: new_user_registration_path, local: true do |f| %>
 
          <div class="field">
           <%= f.label :name, "ユーザー名" %><br />
@@ -21,14 +22,15 @@
         </div>
 
         <div class="field">
-          <%= f.label :, "パスワード再入力" %><br />
-          <%= f.password_field :hoge, autocomplete: "new-password" %>
+          <%= f.label :password, "パスワード再入力" %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
 
         <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>
         </div>
       <% end %>
+     </div> 
     </div>
   </div>
 </div>
