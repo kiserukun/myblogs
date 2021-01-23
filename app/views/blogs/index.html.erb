@@ -7,7 +7,22 @@
        </div>
     <% end %>
     <div class="card__wrapper">
-      <%= render partial: 'prototype', collection: @blogs %>
+     
+       <% @blogs.each do |blog| %>
+         <%= link_to blog_path(blog.id) do %>
+         <div class="card">
+         <%= image_tag blog.image, class: "card__img" %>
+         <div class="card__body">
+         <%= link_to blog.title, root_path, class: :card__title%>
+       <p class="card__summary">
+     
+    </p>
+    <%#= link_to "by #{blog.name}", root_path, class: :card__user %>
+  </div>
+  </div>
+       <% end %>
+      <% end %>
+      </div>
     </div>
   </div>
 </main>
