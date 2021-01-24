@@ -165,11 +165,16 @@ padding-top: 50px;
   min-height: calc(100vh - 161px);
 }
 .card {
-  width: calc((100% - 50px) / 3);
+  width: calc((100% - 30px) / 3);
   margin-bottom: 40px;
+  border-radius: 4px;
+  padding:10px;
+  background-color: #fff;
 }
 .card__img {
   margin-bottom: 16px;
+  width: 55vh;
+  height: 35vh;
 }
 .card__title {
   display: block;
