@@ -133,6 +133,7 @@ a {
 
 .purchase-btn-icon {
   width: 70%;
+  text-align: center;
 }
 .purchase-btn:hover{
   color: #fff;
@@ -175,9 +176,6 @@ padding-top: 50px;
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
-}
-.card__summary {
-  font-size: 16px;
 }
 .card__user {
   display: block;
