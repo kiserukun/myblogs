@@ -82,6 +82,10 @@ a {
 .form__text {
   width: 50%;
 }
+input[type="text"]{
+  width: 200px;
+  height: 50px;
+}
 
 .field{
   margin: 10px 0;
