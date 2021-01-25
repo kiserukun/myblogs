@@ -189,7 +189,6 @@ padding-top: 50px;
 .card__user {
   display: block;
   font-size: 12px;
-  color: #999;
   text-align: right;
   text-decoration: underline;
 }
@@ -205,7 +204,7 @@ padding-top: 50px;
   text-align: center;
 }
 .show_time{
-  padding: 5px 0 10px 15px;
+  padding: 10px 0 10px 15px;
 }
 .prototype__user{
   display: block;
@@ -231,7 +230,7 @@ padding-top: 50px;
   font-weight: bold;
 }
 .title_border{
-  margin: 5px 20px;
+  margin: 10px 20px;
 }
 .prototype__manage{
   display: flex;
