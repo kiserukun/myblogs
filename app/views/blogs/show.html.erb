@@ -3,10 +3,12 @@
     <div class="prototype__wrapper">
     <div class="show_time">
    <%= l @blog.created_at %>
+    <% if user_signed_in? && current_user.id == @blog.user_id %>
     <div class="prototype__manage">
-          <%= link_to "編集する", root_path, class: :prototype__btn %>
-          <%= link_to "削除する", root_path, class: :prototype__btn %>
+          <%= link_to "編集する", edit_blog_path, class: :prototype__btn %>
+          <%= link_to "削除する", blog_path(@blog.id),method: :delete, class: :prototype__btn %>
         </div>
+        <% end %>
    </div>
       <p class="prototype__hedding">
         <%= @blog.title %>
