@@ -14,7 +14,7 @@
         <%= @blog.title %>
         <hr class="title_border">
       </p>
-      <%= link_to "プロトタイプの投稿者", root_path, class: :prototype__user %>
+      <%= link_to @blog.user.name, user_path, class: :prototype__user %>
       <div class="prototype__body">
         <div class="prototype__detail">
           <p class="detail__title"></p>
@@ -27,7 +27,6 @@
         <%= image_tag @blog.image %>
       </div>
       <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
            <%= form_with(model: [@blog, @comment], local: true) do |f|%>
             <div class="field">
@@ -39,16 +38,13 @@
             </div>
            <% end %> 
         <% end %>
-        <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
             <li class="comments_list">
             <% @comments.each do |comment| %>
                <%= comment.text %>
                <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %>
                <% end %>
             </li>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
     </div>
