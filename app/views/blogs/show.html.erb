@@ -5,7 +5,7 @@
    <%= l @blog.created_at %>
     <% if user_signed_in? && current_user.id == @blog.user_id %>
     <div class="prototype__manage">
-          <%= link_to "編集する", edit_blog_path, class: :prototype__btn %>
+          <%= link_to "編集する", edit_blog_path(@blog.id), method: :get, class: :prototype__btn %>
           <%= link_to "削除する", blog_path(@blog.id),method: :delete, class: :prototype__btn %>
         </div>
         <% end %>
@@ -28,21 +28,25 @@
       </div>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-          <%# <%= form_with local: true do |f|%>
+        <% if user_signed_in? %>
+           <%= form_with(model: [@blog, @comment], local: true) do |f|%>
             <div class="field">
-              <%# <%= f.label :hoge, "コメント" %><br />
-              <%# <%= f.text_field :hoge %>
+               <%= f.label :text, "コメント" %><br />
+               <%= f.text_field :text %>
             </div>
             <div class="actions">
-              <%# <%= f.submit "送信する", class: :form__btn  %>
+               <%= f.submit "送信する", class: :form__btn  %>
             </div>
-          <%# <% end %> 
+           <% end %> 
+        <% end %>
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
             <li class="comments_list">
-              <%# <%= " コメントのテキスト "%>
-              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+            <% @comments.each do |comment| %>
+               <%= comment.text %>
+               <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %>
+               <% end %>
             </li>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
