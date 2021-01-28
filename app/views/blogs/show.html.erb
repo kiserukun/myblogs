@@ -14,7 +14,7 @@
         <%= @blog.title %>
         <hr class="title_border">
       </p>
-      <%= link_to @blog.user.name, user_path, class: :prototype__user %>
+      <%= link_to @blog.user.name, "/users/#{@blog.user.id}", class: :prototype__user %>
       <div class="prototype__body">
         <div class="prototype__detail">
           <p class="detail__title"></p>
