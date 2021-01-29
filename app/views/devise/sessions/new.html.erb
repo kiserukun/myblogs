@@ -20,6 +20,14 @@
           <%= f.submit "ログイン", class: :form__btn  %>
         </div>
       <% end %>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|%>
+             <%=f.hidden_field :email ,value: "test@example.com"%>
+             <%=f.hidden_field :password ,value: "testtest"%>
+           <div class="actions">
+             <%= f.submit "かんたんログイン" ,class: :form__btn%>
+           </div>
+      <% end %>
      </div> 
     </div>
   </div>
