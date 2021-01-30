@@ -272,6 +272,12 @@ padding-top: 50px;
   padding: 20px;
   margin: 28px 0 40px 0;
 }
+.prototype__comments .field{
+  text-align: center;
+}
+.prototype__comments .actions{
+  text-align: center;
+}
 
 .comments_lists{
   padding-left: 20px;
@@ -279,15 +285,23 @@ padding-top: 50px;
 
 .comments_list{
   list-style-type: square;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 .comment_user{
   font-size: 16px;
   color: #999;
-  text-decoration: underline;
+  text-decoration: none;
 }
-
+.comment_users{
+  display: flex;
+}
+.comment_user_time{
+  padding-left: 80%;
+}
+.comment_texts{
+  margin-bottom: 20px;
+}
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
